@@ -200,7 +200,7 @@ CV %<>% print_section('by_me_press')
 
 
 
-Selected Publications, Posters, and Talks {data-icon=book}
+Publications {data-icon=book}
 --------------------------------------------------------------------------------
 
 ```{r eval=TRUE}
