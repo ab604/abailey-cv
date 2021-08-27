@@ -52,7 +52,7 @@ if(params$pdf_mode) {
 
 # Aside
 
-![logo](logo.jpg){width="90%"}
+![logo](logo.jpg)<!--{width="90%",height ="90%"}-->
 
 ```{r eval=FALSE}
 # Build interactive network of positions colored by section
@@ -63,7 +63,7 @@ datadrivencv::build_network_logo(CV$entries_data)
 
 ```{r}
 if(params$pdf_mode){
-  cat("View this CV online with links at _ab604.uk/cv/_")
+  cat("View this CV online with links at _ab604.uk/cv/cv.html_")
 } else {
   cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://ab604.uk/cv/bailey_cv.pdf)")
 }
@@ -145,9 +145,7 @@ CV %<>% print_section('industry_positions')
 ```
 
 <!-- These breaks just force a new page so section doesnt get cut off -->
-<br>
-<br>
-<br>
+\newpage
 
 Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
@@ -187,10 +185,6 @@ CV %<>% print_section('about_me_press')
 ```
 
 
-<br>
-<br>
-
-
 <!-- Selected Press (By)  {data-icon=newspaper} -->
 <!-- -------------------------------------------------------------------------------- -->
 
@@ -198,7 +192,7 @@ CV %<>% print_section('about_me_press')
 CV %<>% print_section('by_me_press')
 ```
 
-
+\newpage
 
 Publications {data-icon=book}
 --------------------------------------------------------------------------------
