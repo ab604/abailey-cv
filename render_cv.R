@@ -5,6 +5,8 @@
 # loaded and load the cached version in the .Rmd instead of re-fetching it twice
 # for the HTML and PDF rendering. This exercise is left to the reader.
 
+library(lubridate)
+
 # Knit the HTML version
 rmarkdown::render("cv.rmd",
                   params = list(pdf_mode = FALSE),
@@ -18,4 +20,8 @@ rmarkdown::render("cv.rmd",
 
 # Convert to PDF using Pagedown
 pagedown::chrome_print(input = tmp_html_cv_loc,
-                       output = "bailey_cv.pdf")
+                       output = glue::glue('alistair-bailey-cv-{today()}.pdf'))
+
+# Convert to PDF using Pagedown
+pagedown::chrome_print(input = tmp_html_cv_loc,
+                       output = 'bailey_cv.pdf')
