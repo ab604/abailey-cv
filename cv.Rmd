@@ -198,8 +198,6 @@ CV %<>% print_section('about_me_press')
 CV %<>% print_section('by_me_press')
 ```
 
-\newpage
-
 Publications {data-icon=book}
 --------------------------------------------------------------------------------
 
