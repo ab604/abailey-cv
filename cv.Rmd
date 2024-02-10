@@ -22,7 +22,7 @@ source("cv_printing_functions.r")
 
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/1zDyffETZsek0j0qJRB1dmuIieEgr8f9czWP8uEuB74M",  
+  data_location = "https://docs.google.com/spreadsheets/d/1RsFc9bKHLrguTIeUNNaclKJ3QLNP0QncGeejcdCdqI8",  
   pdf_mode = params$pdf_mode
 )
 
@@ -129,6 +129,12 @@ Research Experience {data-icon=laptop}
 CV %<>% print_section('research_positions')
 ```
 
+Research Data {data-icon=database}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('deposited_data')
+```
 
 
 Industry Experience {data-icon=suitcase}
