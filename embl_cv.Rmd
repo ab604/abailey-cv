@@ -5,9 +5,11 @@ date: "`r Sys.Date()`"
 params:
   pdf_mode:
     value: true
+  cache_data:
+    value: true
 output:
   pagedown::html_resume:
-    css: ['my_css.css', 'resume']
+    css: ['styles/my-css-2024-02-17.css','resume']
     self_contained: true
 ---
 
@@ -18,14 +20,13 @@ knitr::opts_chunk$set(
 )
 
 library(magrittr) # For the pipe
-source("cv_printing_functions.r")
+source("CV_printing_functions.R")
 
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
   data_location = "https://docs.google.com/spreadsheets/d/1RsFc9bKHLrguTIeUNNaclKJ3QLNP0QncGeejcdCdqI8",  
   pdf_mode = params$pdf_mode
 )
-
 ```
 
 
@@ -39,20 +40,24 @@ if(params$pdf_mode) {
 }
 </style>")
 }
+
+# 
+
+
+
 ```
 
-::: {.header-block}
+<!-- ::: {.header-block}
 ::: {.header-block-inner}
 ::: {.title}
 `r rmarkdown::metadata$author`
 :::
 :::
-:::
-
+::: -->
 
 # Aside
 
-![logo](logo.jpg)<!--{width="90%",height ="90%"}-->
+![logo](logo.jpg){width=100%}<!--{width="90%",height ="90%"}-->
 
 ```{r eval=FALSE}
 # Build interactive network of positions colored by section
@@ -97,8 +102,6 @@ The source code is available [on github.com/ab604/abailey-cv](https://github.com
 The font is [Atkinson Hyperlegible](https://fonts.google.com/specimen/Atkinson+Hyperlegible)
 
 Last updated on `r Sys.Date()`.
-
-
 
 Main
 ================================================================================

@@ -8,14 +8,14 @@
 library(lubridate)
 
 # Knit the HTML version
-# rmarkdown::render("embl_cv.rmd",
-#                   params = list(pdf_mode = FALSE),
-#                   output_file = glue::glue('alistair-bailey-cv-{today()}.html'))# Knit the HTML version
+rmarkdown::render("embl_cv.rmd",
+                  params = list(pdf_mode = FALSE),
+                  output_file = glue::glue('alistair-bailey-cv-{today()}.html'))# Knit the HTML version
 
 # Knit the HTML version - General CV order
-rmarkdown::render("cv.rmd",
-                  params = list(pdf_mode = FALSE),
-                  output_file = glue::glue('alistair-bailey-cv-{today()}.html'))
+# rmarkdown::render("cv.rmd",
+#                   params = list(pdf_mode = FALSE),
+#                   output_file = glue::glue('alistair-bailey-cv-{today()}.html'))
 
 
 # Knit the PDF version to temporary html location
@@ -29,11 +29,12 @@ pagedown::chrome_print(input = tmp_html_cv_loc,
                        output = glue::glue('alistair-bailey-cv-{today()}.pdf'))
 
 # Knit the PDF version to temporary html location - General CV order
-tmp_html_cv_loc <- fs::file_temp(ext = ".html")
-rmarkdown::render("cv.rmd",
-                  params = list(pdf_mode = TRUE),
-                  output_file = tmp_html_cv_loc)
+#tmp_html_cv_loc <- fs::file_temp(ext = ".html")
+#rmarkdown::render("cv.rmd",
+#                  params = list(pdf_mode = TRUE),
+#                  output_file = tmp_html_cv_loc)
 
 # Convert to PDF using Pagedown
-pagedown::chrome_print(input = tmp_html_cv_loc,
-                       output = 'bailey_cv.pdf')
+#pagedown::chrome_print(input = tmp_html_cv_loc,
+#                       output = 'bailey_cv.pdf')
+#
