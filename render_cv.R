@@ -28,6 +28,14 @@ rmarkdown::render("embl_cv.rmd",
 pagedown::chrome_print(input = tmp_html_cv_loc,
                        output = glue::glue('alistair-bailey-cv-{today()}.pdf'))
 
+fs::file_copy(glue::glue('alistair-bailey-cv-{today()}.pdf'), 
+              '../academic-website-2021/content/cv/bailey_cv.pdf', 
+              overwrite = TRUE)
+
+fs::file_copy(glue::glue('alistair-bailey-cv-{today()}.html'), 
+              '../academic-website-2021/content/cv/cv.html', 
+              overwrite = TRUE)
+
 # Knit the PDF version to temporary html location - General CV order
 #tmp_html_cv_loc <- fs::file_temp(ext = ".html")
 #rmarkdown::render("cv.rmd",
