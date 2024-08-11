@@ -44,13 +44,14 @@ create_CV_object <-  function(data_location,
     cv$skills        <- read_gsheet(sheet_id = "language_skills")
     cv$text_blocks   <- read_gsheet(sheet_id = "text_blocks")
     cv$contact_info  <- read_gsheet(sheet_id = "contact_info")
-    cv$deposited_data <- read_gsheet(sheet_id = "deposited_data")
+    cv$research_data  <- googlesheets4::read_sheet(data_location, sheet = "research_data")
   } else {
     # Want to go old-school with csvs?
     cv$entries_data <- readr::read_csv(paste0(data_location, "entries.csv"), skip = 1)
     cv$skills       <- readr::read_csv(paste0(data_location, "language_skills.csv"), skip = 1)
     cv$text_blocks  <- readr::read_csv(paste0(data_location, "text_blocks.csv"), skip = 1)
     cv$contact_info <- readr::read_csv(paste0(data_location, "contact_info.csv"), skip = 1)
+    cv$deposited_data <- readr::read_csv(paste0(data_location, "data.csv"), skip = 1)
   }
   
   

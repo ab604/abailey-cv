@@ -8,7 +8,7 @@
 library(lubridate)
 
 # Knit the HTML version
-rmarkdown::render("embl_cv.rmd",
+rmarkdown::render("cv-2024-08-11.Rmd",
                   params = list(pdf_mode = FALSE),
                   output_file = glue::glue('alistair-bailey-cv-{today()}.html'))# Knit the HTML version
 
@@ -20,7 +20,7 @@ rmarkdown::render("embl_cv.rmd",
 
 # Knit the PDF version to temporary html location
 tmp_html_cv_loc <- fs::file_temp(ext = ".html")
-rmarkdown::render("embl_cv.rmd",
+rmarkdown::render("cv-2024-08-11.Rmd",
                   params = list(pdf_mode = TRUE),
                   output_file = tmp_html_cv_loc)
 
