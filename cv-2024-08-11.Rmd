@@ -76,6 +76,7 @@ if(params$pdf_mode){
 ## Contact {#contact}
 
 ```{r}
+# <i class="fa-brands fa-bluesky"></i>
 CV %>% print_contact_info()
 ```
 
