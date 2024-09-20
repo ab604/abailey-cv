@@ -7,5 +7,6 @@ resume_files/
 README.html
 *_cache/
 cv.html
+old/*
 
 ddcv_cache.rds
