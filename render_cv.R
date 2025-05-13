@@ -10,7 +10,7 @@ library(lubridate)
 # Knit the HTML version
 rmarkdown::render("cv-2024-08-11.Rmd",
                   params = list(pdf_mode = FALSE),
-                  output_file = glue::glue('alistair-bailey-cv-{today()}.html'))# Knit the HTML version
+                  output_file = glue::glue('cv.html'))# Knit the HTML version
 
 # Knit the HTML version - General CV order
 # rmarkdown::render("cv.rmd",
@@ -26,15 +26,15 @@ rmarkdown::render("cv-2024-08-11.Rmd",
 
 # Convert to PDF using Pagedown - EMBL CV ordering
 pagedown::chrome_print(input = tmp_html_cv_loc,
-                       output = glue::glue('alistair-bailey-cv-{today()}.pdf'))
+                       output = glue::glue('bailey_cv.pdf'))
 
-fs::file_copy(glue::glue('alistair-bailey-cv-{today()}.pdf'),
-              '../academic-website-2021/content/cv/bailey_cv.pdf',
-              overwrite = TRUE)
+# fs::file_copy(glue::glue('alistair-bailey-cv-{today()}.pdf'),
+#               '../academic-website-2021/content/cv/bailey_cv.pdf',
+#               overwrite = TRUE)
 
-fs::file_copy(glue::glue('alistair-bailey-cv-{today()}.html'),
-              '../academic-website-2021/content/cv/cv.html',
-              overwrite = TRUE)
+# fs::file_copy(glue::glue('alistair-bailey-cv-{today()}.html'),
+#               '../academic-website-2021/content/cv/cv.html',
+#               overwrite = TRUE)
 
 # Knit the PDF version to temporary html location - General CV order
 #tmp_html_cv_loc <- fs::file_temp(ext = ".html")

@@ -9,13 +9,13 @@ params:
     value: false
 output:
   pagedown::html_resume:
-    css: ['styles/my-css-2024-02-17.css', 'resume']
+    css: ['styles/my-css-2025-05-13.css', 'resume']
     self_contained: true
 ---
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
-  results='asis', 
+  results='asis',
   echo = FALSE
 )
 
@@ -24,7 +24,7 @@ source("CV_printing_functions.R")
 
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/1RsFc9bKHLrguTIeUNNaclKJ3QLNP0QncGeejcdCdqI8",  
+  data_location = "https://docs.google.com/spreadsheets/d/1RsFc9bKHLrguTIeUNNaclKJ3QLNP0QncGeejcdCdqI8",
   pdf_mode = params$pdf_mode
 )
 ```
@@ -40,7 +40,7 @@ if(params$pdf_mode) {
 </style>")
 }
 
-# 
+#
 
 
 
@@ -92,7 +92,7 @@ Made with the R package [**pagedown**](https://github.com/rstudio/pagedown).
 
 The source code is available [on github.com/ab604/abailey-cv](https://github.com/ab604/abailey-cv).
 
-The font is [Atkinson Hyperlegible](https://fonts.google.com/specimen/Atkinson+Hyperlegible)
+The fonts are [Inter](https://fonts.google.com/specimen/Inter) and [Permanent Marker](https://fonts.google.com/specimen/Permanent+Marker)
 
 Last updated on `r Sys.Date()`.
 
@@ -102,7 +102,7 @@ Last updated on `r Sys.Date()`.
 
 ```{r}
 # Note the special double pipe so we modify the CV object in place
-CV %<>% print_text_block("intro") 
+CV %<>% print_text_block("intro")
 ```
 
 ## Education {data-icon="graduation-cap" data-concise="true"}
