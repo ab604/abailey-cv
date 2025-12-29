@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400;1,700&family=Permanent+Marker&display=swap');
 
-/* Main text is Atkinson Hyperlegible*/
+/* Main text is Inter*/
 body {
   font-family: "Inter", sans-serif;
   font-weight: 300;
@@ -9,11 +9,12 @@ body {
 }
 
 h1,
-h2,
-h3 {
+h2 {
   font-family: "Permanent Marker", cursive;
   color: #444;
 }
+
+/* h3 */
 
 .aside h2,
 #aside h2 {
